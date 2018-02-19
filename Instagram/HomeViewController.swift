@@ -7,9 +7,22 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
 
+    @IBAction func logoutbuttonTaped(_ sender: Any) {
+        do{
+            try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+        } catch {
+            
+        }
+     
+
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
