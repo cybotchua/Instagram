@@ -8,12 +8,50 @@
 
 import UIKit
 import Pastel
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var logInButton: UIButton!
+    
+    @IBOutlet weak var signUpButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        animateLoginBackground()
+        
+        
+        
+    }
+    
+    func logInButtonTapped() {
+        guard let username = usernameTextField.text,
+            let password = passwordTextField.text else {return}
+        
+        Auth.auth().signIn(withCustomToken: username) { (user, error) in
+            if let validError = error {
+                self.showAlert(withTitle: "Error", message: validError.localizedDescription)
+            }
+            if user != nil {
+                self.usernameTextField.text = ""
+                self.passwordTextField.text = ""
+                
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
+                
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    
+    func animateLoginBackground() {
         let pastelView = PastelView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height / 3.8))
         
         // Custom Direction
