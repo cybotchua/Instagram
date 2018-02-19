@@ -25,10 +25,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6M7-Lf-5IT">
                                 <rect key="frame" x="40" y="283.5" width="295" height="40"/>
-<<<<<<< HEAD
-=======
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
->>>>>>> logInVC
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Dmi-Z5-dz4"/>
                                 </constraints>
@@ -37,12 +34,8 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAi-ol-V5z">
-<<<<<<< HEAD
-                                <rect key="frame" x="40" y="353.5" width="295" height="40"/>
-=======
                                 <rect key="frame" x="40" y="353.5" width="295" height="45"/>
                                 <color key="backgroundColor" red="0.60494118928909302" green="0.7932668924331665" blue="0.96810740232467651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
->>>>>>> logInVC
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="muW-AI-Sow"/>
                                 </constraints>
@@ -52,14 +45,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-<<<<<<< HEAD
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ao4-b1-wOj">
-                                <rect key="frame" x="40" y="218.5" width="295" height="40"/>
-=======
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ao4-b1-wOj">
                                 <rect key="frame" x="40" y="218.5" width="295" height="40"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
->>>>>>> logInVC
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3hF-zs-BjM"/>
                                 </constraints>
@@ -74,12 +62,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laM-4n-1V5">
-<<<<<<< HEAD
-                                <rect key="frame" x="40" y="423.5" width="295" height="40"/>
-=======
                                 <rect key="frame" x="40" y="428.5" width="295" height="45"/>
                                 <color key="backgroundColor" red="0.60494118929999996" green="0.79326689240000003" blue="0.96810740230000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
->>>>>>> logInVC
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="rWT-N5-rC7"/>
                                 </constraints>

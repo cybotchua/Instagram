@@ -47,7 +47,10 @@ class LoginViewController: UIViewController {
         
         //skip login page if user is already logged in
         if Auth.auth().currentUser != nil {
-            guard let vc = storyboard?.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
+            
+            let sb = UIStoryboard(name: "DetailsStoryboard", bundle: Bundle.main)
+            
+            guard let vc = sb.instantiateViewController(withIdentifier: "navigationController") as? UITabBarController else {return}
             
             present(vc, animated: true, completion: nil)
         }
@@ -62,7 +65,10 @@ class LoginViewController: UIViewController {
             
             //Check for existing token if they have already logged in with facebook before
             if FBSDKAccessToken.current() != nil {
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
+                
+                let sb = UIStoryboard(name: "DetailsStoryboard", bundle: Bundle.main)
+                
+                guard let vc = sb.instantiateViewController(withIdentifier: "navigationController") as? UITabBarController else {return}
                 
                 self.present(vc, animated: true, completion: nil)
             }
@@ -81,7 +87,9 @@ class LoginViewController: UIViewController {
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""
                 
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
+                let sb = UIStoryboard(name: "DetailsStoryboard", bundle: Bundle.main)
+                
+                guard let vc = sb.instantiateViewController(withIdentifier: "navigationController") as? UITabBarController else {return}
                 
                 self.present(vc, animated: true, completion: nil)
             }
@@ -155,7 +163,9 @@ extension LoginViewController : FBSDKLoginButtonDelegate {
                         
                         self.ref.child("users").child(validUser.uid).setValue(fbUser)
                         
-                        guard let navVC = self.storyboard?.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
+                        let sb = UIStoryboard(name: "DetailsStoryboard", bundle: Bundle.main)
+                        
+                        guard let navVC = sb.instantiateViewController(withIdentifier: "navigationController") as? UITabBarController else {return}
                         
                         self.navigationController?.popViewController(animated: false)
                         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000CEDD7203ACB3E00076471 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DC6BB9203A7A6E002FA5E0 /* LoginViewController.swift */; };
 		00DC6BB8203A7A6E002FA5E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DC6BB7203A7A6E002FA5E0 /* AppDelegate.swift */; };
 		00DC6BBD203A7A6E002FA5E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BBB203A7A6E002FA5E0 /* Main.storyboard */; };
 		00DC6BBF203A7A6E002FA5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BBE203A7A6E002FA5E0 /* Assets.xcassets */; };
@@ -85,16 +86,13 @@
 				00DC6BB9203A7A6E002FA5E0 /* LoginViewController.swift */,
 				00DC6BCE203AB389002FA5E0 /* VCExtensions.swift */,
 				00DC6BBB203A7A6E002FA5E0 /* Main.storyboard */,
-<<<<<<< HEAD
 				4EF609B2203A83C100E528EC /* DetailsStoryboard.storyboard */,
 				4EF609B4203A8D4C00E528EC /* HomeViewController.swift */,
 				4EF609B6203A8D5A00E528EC /* SearchViewController.swift */,
 				4EF609B8203A8D7500E528EC /* GalleryViewController.swift */,
 				4EF609BC203A8DB500E528EC /* FavouritesViewController.swift */,
 				4EF609BA203A8D9200E528EC /* ProfileViewController.swift */,
-=======
 				00DC6BCC203AAD8C002FA5E0 /* SignUpViewController.swift */,
->>>>>>> logInVC
 				00DC6BBE203A7A6E002FA5E0 /* Assets.xcassets */,
 				00DC6BC0203A7A6E002FA5E0 /* LaunchScreen.storyboard */,
 				00DC6BC3203A7A6E002FA5E0 /* Info.plist */,
@@ -268,13 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
+				000CEDD7203ACB3E00076471 /* LoginViewController.swift in Sources */,
 				4EF609BB203A8D9200E528EC /* ProfileViewController.swift in Sources */,
-=======
 				00DC6BCD203AAD8C002FA5E0 /* SignUpViewController.swift in Sources */,
-				00DC6BBA203A7A6E002FA5E0 /* LoginViewController.swift in Sources */,
 				00DC6BCF203AB389002FA5E0 /* VCExtensions.swift in Sources */,
->>>>>>> logInVC
 				00DC6BB8203A7A6E002FA5E0 /* AppDelegate.swift in Sources */,
 				4EF609B9203A8D7500E528EC /* GalleryViewController.swift in Sources */,
 				4EF609B7203A8D5A00E528EC /* SearchViewController.swift in Sources */,
