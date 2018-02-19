@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6M7-Lf-5IT">
-                                <rect key="frame" x="40" y="280" width="295" height="40"/>
+                                <rect key="frame" x="40" y="283.5" width="295" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Dmi-Z5-dz4"/>
                                 </constraints>
@@ -33,7 +33,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAi-ol-V5z">
-                                <rect key="frame" x="40" y="350" width="295" height="40"/>
+                                <rect key="frame" x="40" y="353.5" width="295" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="muW-AI-Sow"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 <state key="normal" title="Log In"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ao4-b1-wOj">
-                                <rect key="frame" x="40" y="215" width="295" height="40"/>
+                                <rect key="frame" x="40" y="218.5" width="295" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3hF-zs-BjM"/>
                                 </constraints>
@@ -50,13 +50,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl6-7t-cB5">
-                                <rect key="frame" x="71.5" y="104" width="232.5" height="61"/>
+                                <rect key="frame" x="108.5" y="104" width="159" height="64.5"/>
                                 <fontDescription key="fontDescription" name="Billabong" family="Billabong" pointSize="52"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laM-4n-1V5">
-                                <rect key="frame" x="40" y="420" width="295" height="40"/>
+                                <rect key="frame" x="40" y="423.5" width="295" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rWT-N5-rC7"/>
                                 </constraints>

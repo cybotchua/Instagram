@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		00DC6BB8203A7A6E002FA5E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DC6BB7203A7A6E002FA5E0 /* AppDelegate.swift */; };
-		00DC6BBA203A7A6E002FA5E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DC6BB9203A7A6E002FA5E0 /* LoginViewController.swift */; };
 		00DC6BBD203A7A6E002FA5E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BBB203A7A6E002FA5E0 /* Main.storyboard */; };
 		00DC6BBF203A7A6E002FA5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BBE203A7A6E002FA5E0 /* Assets.xcassets */; };
 		00DC6BC2203A7A6E002FA5E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BC0203A7A6E002FA5E0 /* LaunchScreen.storyboard */; };
 		00DC6BCA203A8836002FA5E0 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BC9203A8829002FA5E0 /* Billabong.ttf */; };
 		00DC6BCB203A8869002FA5E0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BC3203A7A6E002FA5E0 /* Info.plist */; };
 		4EF609B1203A7C2500E528EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF609B0203A7C2500E528EC /* GoogleService-Info.plist */; };
+		4EF609B3203A83C100E528EC /* DetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF609B2203A83C100E528EC /* DetailsStoryboard.storyboard */; };
+		4EF609B5203A8D4C00E528EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF609B4203A8D4C00E528EC /* HomeViewController.swift */; };
+		4EF609B7203A8D5A00E528EC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF609B6203A8D5A00E528EC /* SearchViewController.swift */; };
+		4EF609B9203A8D7500E528EC /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF609B8203A8D7500E528EC /* GalleryViewController.swift */; };
+		4EF609BB203A8D9200E528EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF609BA203A8D9200E528EC /* ProfileViewController.swift */; };
+		4EF609BD203A8DB500E528EC /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF609BC203A8DB500E528EC /* FavouritesViewController.swift */; };
 		A0A4EC7B26C15FDC48A9C45C /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3182F9721CF80C6D341B1F59 /* Pods_Instagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +34,12 @@
 		00DC6BC9203A8829002FA5E0 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		3182F9721CF80C6D341B1F59 /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF609B0203A7C2500E528EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4EF609B2203A83C100E528EC /* DetailsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsStoryboard.storyboard; sourceTree = "<group>"; };
+		4EF609B4203A8D4C00E528EC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4EF609B6203A8D5A00E528EC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4EF609B8203A8D7500E528EC /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		4EF609BA203A8D9200E528EC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4EF609BC203A8DB500E528EC /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		92A144440E2FB7C504DAEC23 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		F74DE6C2E68D40ADAA9BDCF2 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +80,12 @@
 				00DC6BB7203A7A6E002FA5E0 /* AppDelegate.swift */,
 				00DC6BB9203A7A6E002FA5E0 /* LoginViewController.swift */,
 				00DC6BBB203A7A6E002FA5E0 /* Main.storyboard */,
+				4EF609B2203A83C100E528EC /* DetailsStoryboard.storyboard */,
+				4EF609B4203A8D4C00E528EC /* HomeViewController.swift */,
+				4EF609B6203A8D5A00E528EC /* SearchViewController.swift */,
+				4EF609B8203A8D7500E528EC /* GalleryViewController.swift */,
+				4EF609BC203A8DB500E528EC /* FavouritesViewController.swift */,
+				4EF609BA203A8D9200E528EC /* ProfileViewController.swift */,
 				00DC6BBE203A7A6E002FA5E0 /* Assets.xcassets */,
 				00DC6BC0203A7A6E002FA5E0 /* LaunchScreen.storyboard */,
 				00DC6BC3203A7A6E002FA5E0 /* Info.plist */,
@@ -158,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00DC6BC2203A7A6E002FA5E0 /* LaunchScreen.storyboard in Resources */,
+				4EF609B3203A83C100E528EC /* DetailsStoryboard.storyboard in Resources */,
 				00DC6BBF203A7A6E002FA5E0 /* Assets.xcassets in Resources */,
 				00DC6BCB203A8869002FA5E0 /* Info.plist in Resources */,
 				00DC6BBD203A7A6E002FA5E0 /* Main.storyboard in Resources */,
@@ -235,8 +253,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00DC6BBA203A7A6E002FA5E0 /* LoginViewController.swift in Sources */,
+				4EF609BB203A8D9200E528EC /* ProfileViewController.swift in Sources */,
 				00DC6BB8203A7A6E002FA5E0 /* AppDelegate.swift in Sources */,
+				4EF609B9203A8D7500E528EC /* GalleryViewController.swift in Sources */,
+				4EF609B7203A8D5A00E528EC /* SearchViewController.swift in Sources */,
+				4EF609BD203A8DB500E528EC /* FavouritesViewController.swift in Sources */,
+				4EF609B5203A8D4C00E528EC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
