@@ -11,6 +11,8 @@ import Pastel
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
@@ -26,18 +28,44 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: UIButton!
     
+    var ref : DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        logInButton.layer.cornerRadius = 5
+        logInButton.layer.borderWidth = 1
+        logInButton.layer.borderColor = UIColor.clear.cgColor
+        
+        signUpButton.layer.cornerRadius = 5
+        signUpButton.layer.borderWidth = 1
+        signUpButton.layer.borderColor = UIColor.clear.cgColor
+        
+        ref = Database.database().reference()
+        
         animateLoginBackground()
         
+        //skip login page if user is already logged in
         if Auth.auth().currentUser != nil {
             guard let vc = storyboard?.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
             
             present(vc, animated: true, completion: nil)
-            
         }
-        
+            
+            //Facebook Login Button
+            let fbLoginButton = FBSDKLoginButton()
+//            loginButton.delegate = self
+            let centerY = view.center.y
+            fbLoginButton.frame = CGRect(x: 16, y: centerY + 190, width: view.frame.width - 32, height: 50)
+            view.addSubview(fbLoginButton)
+            fbLoginButton.readPermissions = ["public_profile", "email"]
+            
+            //Check for existing token if they have already logged in with facebook before
+            if FBSDKAccessToken.current() != nil {
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
+                
+                self.present(vc, animated: true, completion: nil)
+            }
         
     }
     
@@ -87,4 +115,17 @@ class LoginViewController: UIViewController {
 
 
 }
+
+//Facebook Login Button Delegate
+//extension LoginViewController : FBSDKLoginButtonDelegate {
+//    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+//        <#code#>
+//    }
+//
+//    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+//        <#code#>
+//    }
+//
+//
+//}
 
