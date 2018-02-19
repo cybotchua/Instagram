@@ -14,11 +14,15 @@ import FirebaseStorage
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var logInButton: UIButton! {
+        didSet {
+            logInButton.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
+        }
+    }
     
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -27,20 +31,26 @@ class LoginViewController: UIViewController {
         
         animateLoginBackground()
         
+        if Auth.auth().currentUser != nil {
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
+            
+            present(vc, animated: true, completion: nil)
+            
+        }
         
         
     }
     
-    func logInButtonTapped() {
-        guard let username = usernameTextField.text,
+    @objc func logInButtonTapped() {
+        guard let email = emailTextField.text,
             let password = passwordTextField.text else {return}
         
-        Auth.auth().signIn(withCustomToken: username) { (user, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let validError = error {
                 self.showAlert(withTitle: "Error", message: validError.localizedDescription)
             }
             if user != nil {
-                self.usernameTextField.text = ""
+                self.emailTextField.text = ""
                 self.passwordTextField.text = ""
                 
                 guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {return}
