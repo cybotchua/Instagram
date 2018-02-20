@@ -11,6 +11,8 @@
 		002AF56A203BC67E00F8FC86 /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AF569203BC67E00F8FC86 /* SearchBarViewController.swift */; };
 		002AF56C203BC99600F8FC86 /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AF56B203BC99600F8FC86 /* PictureCollectionViewCell.swift */; };
 		002AF56E203BCE1500F8FC86 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AF56D203BCE1500F8FC86 /* Image.swift */; };
+		002AF570203BFB8800F8FC86 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AF56F203BFB8800F8FC86 /* SearchTableViewCell.swift */; };
+		002AF572203C00F500F8FC86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AF571203C00F500F8FC86 /* User.swift */; };
 		00DC6BB8203A7A6E002FA5E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DC6BB7203A7A6E002FA5E0 /* AppDelegate.swift */; };
 		00DC6BBD203A7A6E002FA5E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BBB203A7A6E002FA5E0 /* Main.storyboard */; };
 		00DC6BBF203A7A6E002FA5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BBE203A7A6E002FA5E0 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		002AF569203BC67E00F8FC86 /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
 		002AF56B203BC99600F8FC86 /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		002AF56D203BCE1500F8FC86 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		002AF56F203BFB8800F8FC86 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		002AF571203C00F500F8FC86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		00DC6BB4203A7A6E002FA5E0 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DC6BB7203A7A6E002FA5E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00DC6BB9203A7A6E002FA5E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -97,9 +101,11 @@
 				00DC6BCE203AB389002FA5E0 /* VCExtensions.swift */,
 				00DC6BBB203A7A6E002FA5E0 /* Main.storyboard */,
 				4EF609B2203A83C100E528EC /* DetailsStoryboard.storyboard */,
+				002AF56F203BFB8800F8FC86 /* SearchTableViewCell.swift */,
 				002AF56B203BC99600F8FC86 /* PictureCollectionViewCell.swift */,
 				002AF569203BC67E00F8FC86 /* SearchBarViewController.swift */,
 				4EF609B6203A8D5A00E528EC /* SearchViewController.swift */,
+				002AF571203C00F500F8FC86 /* User.swift */,
 				002AF56D203BCE1500F8FC86 /* Image.swift */,
 				4EF609B4203A8D4C00E528EC /* HomeViewController.swift */,
 				4EB18D0B203BB3870017846D /* HomeTableViewCell.swift */,
@@ -290,11 +296,13 @@
 				00DC6BB8203A7A6E002FA5E0 /* AppDelegate.swift in Sources */,
 				002AF56E203BCE1500F8FC86 /* Image.swift in Sources */,
 				4EB18D0D203BB3870017846D /* HomeTableViewCell.swift in Sources */,
+				002AF572203C00F500F8FC86 /* User.swift in Sources */,
 				4EF609B9203A8D7500E528EC /* GalleryViewController.swift in Sources */,
 				4EF609B7203A8D5A00E528EC /* SearchViewController.swift in Sources */,
 				002AF56C203BC99600F8FC86 /* PictureCollectionViewCell.swift in Sources */,
 				4EF609BD203A8DB500E528EC /* FavouritesViewController.swift in Sources */,
 				4EF609B5203A8D4C00E528EC /* HomeViewController.swift in Sources */,
+				002AF570203BFB8800F8FC86 /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

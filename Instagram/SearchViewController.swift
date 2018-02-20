@@ -7,8 +7,8 @@
 //
 
 /*THINGS TO DO
- collection view
- search bar
+ collection view //
+ search bar //
  tableview lists all users
  profile pic
  username
@@ -32,7 +32,11 @@ class SearchViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            searchBar.delegate = self
+        }
+    }
     
     var ref : DatabaseReference!
     var images : [Image] = []
@@ -47,6 +51,12 @@ class SearchViewController: UIViewController {
         
     }
     
+    func searchBarTapped() {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "SearchBarViewController") as? SearchBarViewController else {return}
+        
+        present(vc, animated: true, completion: nil)
+    }
+    
     func observeFireBase() {
         
         //CHILD ADDED
@@ -54,7 +64,6 @@ class SearchViewController: UIViewController {
             
             guard let imageDict = snapshot.value as? [String : Any] else {return}
             
-            if imageDict["email"] as? String != Auth.auth().currentUser?.email {
                 let image = Image(imageUID: snapshot.key, imageDict: imageDict)
                 
                 DispatchQueue.main.async {
@@ -62,7 +71,6 @@ class SearchViewController: UIViewController {
                     let indexPath = IndexPath(row: self.images.count - 1, section: 0)
                     self.collectionView.insertItems(at: [indexPath])
                 }
-            }
             
             print(snapshot)
         }
@@ -107,5 +115,12 @@ extension SearchViewController : UICollectionViewDataSource, UICollectionViewDel
         }
         
         return cell
+    }
+}
+
+extension SearchViewController : UISearchBarDelegate {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBarTapped()
+        return false
     }
 }
