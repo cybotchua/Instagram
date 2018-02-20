@@ -18,6 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A9G-Wc-atE">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="pRi-io-Xdb" customClass="HomeTableViewCell" customModule="Instagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pRi-io-Xdb" id="wqF-e5-EJr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOz-XT-nyT">
                                 <rect key="frame" x="109" y="342" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -28,10 +42,19 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A9G-Wc-atE" firstAttribute="leading" secondItem="Paf-Rm-Iwd" secondAttribute="leading" id="Wsp-l0-uyj"/>
+                            <constraint firstItem="A9G-Wc-atE" firstAttribute="top" secondItem="Paf-Rm-Iwd" secondAttribute="top" id="aGr-mm-9sq"/>
+                            <constraint firstItem="Paf-Rm-Iwd" firstAttribute="trailing" secondItem="A9G-Wc-atE" secondAttribute="trailing" id="fHx-W8-vmO"/>
+                            <constraint firstItem="Paf-Rm-Iwd" firstAttribute="bottom" secondItem="A9G-Wc-atE" secondAttribute="bottom" id="x8o-4u-Dkk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Paf-Rm-Iwd"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="yBB-vB-bDs"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="A9G-Wc-atE" id="VK4-qS-eqW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4U9-Rg-APj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,30 +76,56 @@
             </objects>
             <point key="canvasLocation" x="1071" y="-1105"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="c8X-xs-9Ga">
             <objects>
-                <viewController id="5Nt-Oe-lql" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="5Nt-Oe-lql" customClass="SearchViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KUe-0o-OBg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8w9-g4-Fig">
-                                <rect key="frame" x="168" y="236" width="39" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CDA-nR-MY5">
+                                <rect key="frame" x="0.0" y="66" width="375" height="552"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3ap-IP-7N2">
+                                    <size key="itemSize" width="95" height="99"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="i8T-Qj-7eX">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="99"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="95" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-WO-HBp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wVV-KF-29F" firstAttribute="bottom" secondItem="CDA-nR-MY5" secondAttribute="bottom" id="5Pf-MO-TPT"/>
+                            <constraint firstItem="Eh5-WO-HBp" firstAttribute="leading" secondItem="wVV-KF-29F" secondAttribute="leading" id="AF8-B9-6X8"/>
+                            <constraint firstItem="wVV-KF-29F" firstAttribute="trailing" secondItem="CDA-nR-MY5" secondAttribute="trailing" id="CBI-0a-bIM"/>
+                            <constraint firstItem="Eh5-WO-HBp" firstAttribute="top" secondItem="KUe-0o-OBg" secondAttribute="top" id="CPq-d9-WWI"/>
+                            <constraint firstItem="CDA-nR-MY5" firstAttribute="top" secondItem="Eh5-WO-HBp" secondAttribute="bottom" constant="10" id="ejy-Cv-Rgp"/>
+                            <constraint firstItem="CDA-nR-MY5" firstAttribute="leading" secondItem="wVV-KF-29F" secondAttribute="leading" id="o1S-MD-v2q"/>
+                            <constraint firstItem="Eh5-WO-HBp" firstAttribute="trailing" secondItem="wVV-KF-29F" secondAttribute="trailing" id="y7h-4h-EYf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wVV-KF-29F"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="caD-PA-18S"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wN-qR-G98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18" y="-236"/>
+            <point key="canvasLocation" x="-18.399999999999999" y="-236.13193403298354"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rDq-6W-rf8">
