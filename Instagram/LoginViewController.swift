@@ -16,6 +16,8 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var orLabel: UILabel!
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -54,24 +56,32 @@ class LoginViewController: UIViewController {
             
             present(vc, animated: true, completion: nil)
         }
+        
+        //Facebook Login Button
+        let fbLoginButton = FBSDKLoginButton()
+        fbLoginButton.delegate = self
+        let centerY = view.center.y
+        fbLoginButton.frame = CGRect(x: 16, y: centerY + 190, width: view.frame.width - 32, height: 50)
+        
+        view.addSubview(fbLoginButton)
+        fbLoginButton.readPermissions = ["public_profile", "email"]
+        
+        fbLoginButton.translatesAutoresizingMaskIntoConstraints = false
+        let horizontalConstraint = NSLayoutConstraint(item: fbLoginButton, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+        let verticalConstraint = NSLayoutConstraint(item: fbLoginButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: orLabel, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 30)
+        let widthConstraint = NSLayoutConstraint(item: fbLoginButton, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 295)
+        let heightConstraint = NSLayoutConstraint(item: fbLoginButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 45)
+        view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
+        
+        //Check for existing token if they have already logged in with facebook before
+        if FBSDKAccessToken.current() != nil {
             
-            //Facebook Login Button
-            let fbLoginButton = FBSDKLoginButton()
-            fbLoginButton.delegate = self
-            let centerY = view.center.y
-            fbLoginButton.frame = CGRect(x: 16, y: centerY + 190, width: view.frame.width - 32, height: 50)
-            view.addSubview(fbLoginButton)
-            fbLoginButton.readPermissions = ["public_profile", "email"]
+            let sb = UIStoryboard(name: "DetailsStoryboard", bundle: Bundle.main)
             
-            //Check for existing token if they have already logged in with facebook before
-            if FBSDKAccessToken.current() != nil {
-                
-                let sb = UIStoryboard(name: "DetailsStoryboard", bundle: Bundle.main)
-                
-                guard let vc = sb.instantiateViewController(withIdentifier: "navigationController") as? UITabBarController else {return}
-                
-                self.present(vc, animated: true, completion: nil)
-            }
+            guard let vc = sb.instantiateViewController(withIdentifier: "navigationController") as? UITabBarController else {return}
+            
+            self.present(vc, animated: true, completion: nil)
+        }
         
     }
     
@@ -95,7 +105,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-
+    
 }
 
 //Facebook Login Button Delegate
@@ -152,7 +162,7 @@ extension LoginViewController : FBSDKLoginButtonDelegate {
             }
             )}
     }
-
+    
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         let firebaseAuth = Auth.auth()
         do {
@@ -161,7 +171,7 @@ extension LoginViewController : FBSDKLoginButtonDelegate {
             print ("Error signing out: %@", signOutError)
         }
     }
-
-
+    
+    
 }
 

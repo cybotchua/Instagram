@@ -25,7 +25,7 @@ extension UIViewController {
     }
     
     func animateLoginBackground() {
-        let pastelView = PastelView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height / 3.8))
+        let pastelView = PastelView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height / 3.6))
         
         // Custom Direction
         pastelView.startPastelPoint = .bottomLeft
