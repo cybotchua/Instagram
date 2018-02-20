@@ -24,24 +24,73 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
+            tableView.rowHeight = tableView.frame.height
         }
     }
     
+    var ref : DatabaseReference!
+    var users : [User] = []
+    var images : [Image] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
+        observeFirebase()
+    }
+    
+    func observeFirebase() {
+        ref.child("images").observe(.childAdded) { (snapshot) in
+            guard let imageDict = snapshot.value as? [String:Any] else {return}
+            let image = Image(imageUID: snapshot.key, imageDict: imageDict)
 
+            DispatchQueue.main.async {
+                self.images.append(image)
+                let indexPath = IndexPath(row: self.images.count - 1, section: 0)
+                self.tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+
+            print(snapshot.key)
+            print("testing")
+
+        }
+
+    }
+
+    func renderImage(_ urlString: String, cellImageView: UIImageView) {
+        guard let url = URL.init(string: urlString) else {return}
+        let session = URLSession.shared
+
+        let task = session.dataTask(with: url) { (data, response, error) in
+            if let validError = error {
+                print(validError.localizedDescription)
+            }
+
+            if let validData = data {
+                let image = UIImage(data: validData)
+
+                DispatchQueue.main.async {
+                    cellImageView.image = image
+                }
+            }
+        }
+        task.resume()
     }
 
 }
 
 extension HomeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+//        count number of post
+        return images.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("HomeTableViewCell", owner: self, options: nil)?.first as! HomeTableViewCell
-
+        
+//        load image
+        let url = images[indexPath.row].imageURL
+        renderImage(url, cellImageView: cell.homeImageView)
+        
         return cell
     }
 }
