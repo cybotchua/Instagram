@@ -132,30 +132,30 @@ extension LoginViewController : FBSDKLoginButtonDelegate {
                         
                         
                         //Getting details based on FB Credentials
-                        if let validResult = result as? [String : Any] {
-                            let id = validResult["id"]
-                            let name = validResult["name"]
-                            let email = validResult["email"]
-                            
-                            if let picture = validResult["picture"] as? [String : Any],
-                                let data = picture["data"] as? [String : Any],
-                                let url = data["url"] as? [String : Any] {
-                                let pictureURL = picture["url"]
-                            }
-                            
+                        if let validResult = result as? [String : Any],
+                            let name = validResult["name"] as? String,
+                            let email = validResult["email"] as? String {
+             
                             //Create user ID in database
                             if let validUser = user {
-                                let fbUser : [String : Any] = ["email" : email, "username" : name]
+                                if let picture = validResult["picture"] as? [String : Any],
+                                    let data = picture["data"] as? [String : Any],
+                                    let url = data["url"] as? String {
+                                    
+                                    let fbUser : [String : Any] = ["email" : email, "username" : name, "profilePicURL" : url]
+                                    
+                                    self.ref.child("users").child(validUser.uid).setValue(fbUser)
+                                    
+                                    let sb = UIStoryboard(name: "DetailsStoryboard", bundle: Bundle.main)
+                                    
+                                    guard let navVC = sb.instantiateViewController(withIdentifier: "navigationController") as? UITabBarController else {return}
+                                    
+                                    self.navigationController?.popViewController(animated: false)
+                                    
+                                    self.present(navVC, animated: false, completion: nil)
+                                }
                                 
-                                self.ref.child("users").child(validUser.uid).setValue(fbUser)
                                 
-                                let sb = UIStoryboard(name: "DetailsStoryboard", bundle: Bundle.main)
-                                
-                                guard let navVC = sb.instantiateViewController(withIdentifier: "navigationController") as? UITabBarController else {return}
-                                
-                                self.navigationController?.popViewController(animated: false)
-                                
-                                self.present(navVC, animated: false, completion: nil)
                             }
                             
                             
