@@ -63,7 +63,7 @@
         <!--Gallery-->
         <scene sceneID="dgz-Cf-qra">
             <objects>
-                <viewController id="6ii-Cc-yC8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GalleryViewController" id="6ii-Cc-yC8" customClass="GalleryViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uTi-7T-10W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -13,4 +13,7 @@ pod 'Firebase/Storage'
 pod "Pastel"
 pod 'FBSDKLoginKit'
 
+use_frameworks!
+pod 'Fusuma'
+
 end
