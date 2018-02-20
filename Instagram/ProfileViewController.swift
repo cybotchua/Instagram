@@ -18,7 +18,23 @@ Profile Page
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    @IBOutlet weak var postNumberLabel: UILabel!
+    
+    @IBOutlet weak var followerNumberLabel: UILabel!
+    
+    @IBOutlet weak var followingNumberLabel: UILabel!
+    
+    @IBOutlet weak var editButton: UIButton!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var profileSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
