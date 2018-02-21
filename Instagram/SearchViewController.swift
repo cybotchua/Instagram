@@ -66,7 +66,7 @@ class SearchViewController: UIViewController {
     func searchBarTapped() {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "SearchBarViewController") as? SearchBarViewController else {return}
 
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func observeFireBase() {

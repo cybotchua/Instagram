@@ -115,15 +115,13 @@ extension SearchBarViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let email = profiles[indexPath.row].email
-//        let username = profiles[indexPath.row].username
-//        let profilePicURL = profiles[indexPath.row].profilePicURL
-//        let uid = profiles[indexPath.row].uid
-//        
-//        let selectedUser = User(uid: uid, userDict: ["email" : email, "username" : username, "profilePicURL" : profilePicURL])
         
-
+        let selectedProfile = profiles[indexPath.row]
         
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "CommonProfileViewController") as? CommonProfileViewController else {return}
+        vc.selectedProfile = selectedProfile
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
