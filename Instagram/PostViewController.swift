@@ -30,16 +30,6 @@ class PostViewController: UIViewController {
         ref = Database.database().reference()
     } //end of ViewDidLoad
     
-//    func uploadCaption() {
-//        guard let caption = captionTextField.text else {return}
-//        guard let email = Auth.auth().currentUser?.email else {return}
-//        let timeStamp = Date().timeIntervalSince1970
-//        let userPost: [String:Any] = ["email": email, "msg" : caption, "timeStamp" : timeStamp]
-//        //add to database
-//        self.ref.child("chat").childByAutoId().setValue(userPost)
-//        //        self.ref.child("chat").remove
-//    } //end of sendMessage
-    
     func uploadToStorage(_ image: UIImage, _ imagePostUID : String) {
         //create storage reference or location
         let storageRef = Storage.storage().reference()
@@ -80,12 +70,11 @@ class PostViewController: UIViewController {
         let userPost: [String:Any] = ["email": email, "caption" : caption, "timeStamp" : timeStamp]
 
         ref.setValue(userPost)
-        
+                
         let storyBoard = UIStoryboard(name: "DetailsStoryboard", bundle: Bundle.main)
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "navigationController") as? UITabBarController else {return}
         self.present(vc, animated: false, completion: nil)
 
-        print("sign up method successful")
-    } // END OF signUpUser
+    } // END OF uploadPost
     
 } //end of Class

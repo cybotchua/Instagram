@@ -9,14 +9,24 @@
 import Foundation
 
 class Image {
+    static var InstaDateFormater : DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm:ss a"
+        return dateFormatter
+    }
     var imageUID : String = ""
     var comments : String = ""
     var uploaderUID : String = ""
     var imageURL : String = ""
     var caption : String = ""
     var timeStamp : NSNumber = 0
-    var currentTimeStamp = NSDate()
     var user : User!
+    
+    
+    var timeStampString : String {
+        let date = Date(timeIntervalSince1970: timeStamp.doubleValue)
+        return Image.InstaDateFormater.string(from: date)
+    }
     
     init(imageUID: String, imageURL: String) {
         self.imageUID = imageUID
@@ -30,11 +40,6 @@ class Image {
         self.imageURL = imageDict["imageURL"] as? String ?? "No URL"
         caption = imageDict["caption"] as? String ?? "No caption"
         timeStamp = imageDict["timeStamp"] as? NSNumber ?? 0
-
-        let seconds = timeStamp.doubleValue
-        let timestampDate = NSDate(timeIntervalSince1970: seconds)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm:ss a"
     }
     
 }

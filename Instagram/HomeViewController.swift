@@ -33,12 +33,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ref = Database.database().reference()
         observeFirebase()
     }
     
     func observeFirebase() {
-        ref.child("images").observe(.childAdded) { (snapshot) in
+        ref.child("images").queryOrdered(byChild: "timeStamp").observe(.childAdded) { (snapshot) in
             guard let imageDict = snapshot.value as? [String:Any] else {return}
             let image = Image(imageUID: snapshot.key, imageDict: imageDict)
 
@@ -85,8 +86,14 @@ extension HomeViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("HomeTableViewCell", owner: self, options: nil)?.first as! HomeTableViewCell
+        
+        //delegate
+        cell.delegate = self
+        cell.index = indexPath
+        
         let message = images[indexPath.row]
         cell.captionLabel.text = message.caption
+        cell.timeLabel.text = message.timeStampString
 //        let purl = user.profilePicURL
 //        renderImage(purl, cellImageView: cell.userImage)
 
@@ -98,4 +105,13 @@ extension HomeViewController : UITableViewDataSource {
     }
 }
 
-
+extension HomeViewController : HomeTableViewCellDelegate {
+    func didLike(at indexPath: IndexPath) {
+        print("Like @", indexPath)
+        
+        guard let currentUserID = Auth.auth().currentUser?.uid else {return}
+        let userPost: [String:Any] = [currentUserID: "true"]
+        
+        ref.child("likes").child(images[indexPath.row].imageUID).child("users").setValue(userPost)
+    }
+}
