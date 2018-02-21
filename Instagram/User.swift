@@ -14,6 +14,10 @@ class User {
     var username : String = ""
     var profilePicURL : String = ""
     
+    init() {
+        
+    }
+    
     init(uid: String, userDict: [String : Any]){
         self.uid = uid
         self.email = userDict["email"] as? String ?? "No email"

@@ -24,71 +24,91 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class SearchViewController: UIViewController {
-    
+
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.dataSource = self
             collectionView.delegate = self
+            
+            
+//            let width = collectionView.bounds.width
+//            let height = collectionView.bounds.height
+//
+//            let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+//            layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//            layout.itemSize = CGSize(width: width/3, height: height/3)
+//            layout.minimumInteritemSpacing = 0
+//            layout.minimumLineSpacing = 0
+//            collectionView!.collectionViewLayout = layout
+
         }
     }
-    
+
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
             searchBar.delegate = self
         }
     }
-    
+
     var ref : DatabaseReference!
     var images : [Image] = []
-    
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         ref = Database.database().reference()
-        
+
         observeFireBase()
-        
+
     }
-    
+
     func searchBarTapped() {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "SearchBarViewController") as? SearchBarViewController else {return}
-        
+
         present(vc, animated: true, completion: nil)
     }
-    
+
     func observeFireBase() {
-        
+
         //CHILD ADDED
         ref.child("images").observe(.childAdded) { (snapshot) in
-            
+
             guard let imageDict = snapshot.value as? [String : Any] else {return}
-            
+
                 let image = Image(imageUID: snapshot.key, imageDict: imageDict)
-                
                 DispatchQueue.main.async {
-                    self.images.append(image)
-                    let indexPath = IndexPath(row: self.images.count - 1, section: 0)
-                    self.collectionView.insertItems(at: [indexPath])
+//                    self.images.append(image)
+//                    self.collectionView.numberOfItems(inSection: 0)
+//                    let indexPath = IndexPath(row: self.images.count - 1, section: 0)
+//                    self.collectionView.insertItems(at: [indexPath])
+//                    self.collectionView.numberOfItems(inSection: 0)
+//                    self.collectionView.reloadData()
+                    
+                    self.collectionView.performBatchUpdates({
+                        self.images.append(image)
+                        let indexPath = IndexPath(row: self.images.count - 1, section: 0)
+                        self.collectionView.insertItems(at: [indexPath])
+                    }, completion: nil)
                 }
-            
+
             print(snapshot)
         }
     }
-    
+
     func getImage(_ urlString: String, _ imageView: UIImageView) {
         guard let url = URL.init(string: urlString) else {return}
-        
+
         let session = URLSession.shared
-        
+
         let task = session.dataTask(with: url) { (data, response, error) in
             if let validError = error {
                 print(validError.localizedDescription)
             }
-            
+
             if let validData = data {
                 let collectionViewImage = UIImage(data: validData)
-                
+
                 DispatchQueue.main.async {
                     imageView.image = collectionViewImage
                 }
@@ -99,21 +119,21 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController : UICollectionViewDataSource, UICollectionViewDelegate {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? PictureCollectionViewCell else {return UICollectionViewCell()}
-        
+
         if let imageViewForCell = cell.imageView {
-            
+
             let picURL = images[indexPath.row].imageURL
-            
+
             getImage(picURL, imageViewForCell)
         }
-        
+
         return cell
     }
 }
@@ -124,3 +144,4 @@ extension SearchViewController : UISearchBarDelegate {
         return false
     }
 }
+
