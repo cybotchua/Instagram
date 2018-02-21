@@ -101,6 +101,7 @@
 				00DC6BCE203AB389002FA5E0 /* VCExtensions.swift */,
 				00DC6BBB203A7A6E002FA5E0 /* Main.storyboard */,
 				4EF609B2203A83C100E528EC /* DetailsStoryboard.storyboard */,
+				4EF609BA203A8D9200E528EC /* ProfileViewController.swift */,
 				002AF56F203BFB8800F8FC86 /* SearchTableViewCell.swift */,
 				002AF56B203BC99600F8FC86 /* PictureCollectionViewCell.swift */,
 				002AF569203BC67E00F8FC86 /* SearchBarViewController.swift */,

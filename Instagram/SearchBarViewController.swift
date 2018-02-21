@@ -25,6 +25,7 @@ class SearchBarViewController: UIViewController {
         didSet {
             tableView.rowHeight = 80
             tableView.dataSource = self
+            tableView.delegate = self
         }
     }
     
@@ -87,7 +88,7 @@ class SearchBarViewController: UIViewController {
 
 }
 
-extension SearchBarViewController : UITableViewDataSource {
+extension SearchBarViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return profiles.count
@@ -108,6 +109,18 @@ extension SearchBarViewController : UITableViewDataSource {
             getImage(picURL, imageViewForCell)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let email = profiles[indexPath.row].email
+//        let username = profiles[indexPath.row].username
+//        let profilePicURL = profiles[indexPath.row].profilePicURL
+//        let uid = profiles[indexPath.row].uid
+//        
+//        let selectedUser = User(uid: uid, userDict: ["email" : email, "username" : username, "profilePicURL" : profilePicURL])
+        
+
+        
     }
     
 }
