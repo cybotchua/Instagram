@@ -152,7 +152,7 @@ class ProfileViewController: UIViewController {
                 
                 let followingCount = snapshot.childrenCount
                 
-                print("Follower Count: \(followingCount)")
+                print("Following Count: \(followingCount)")
                 
                 self.followingNumberLabel.text = "\(followingCount)"
                 
