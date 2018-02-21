@@ -69,6 +69,8 @@ class SearchBarViewController: UIViewController {
             
             guard let userDict = snapshot.value as? [String : Any] else {return}
             
+            if userDict["email"] as? String != Auth.auth().currentUser?.email {
+            
                 let user = User(uid: snapshot.key, userDict: userDict)
                 
                 DispatchQueue.main.async {
@@ -76,6 +78,7 @@ class SearchBarViewController: UIViewController {
                     let indexPath = IndexPath(row: self.profiles.count - 1, section: 0)
                     self.tableView.insertRows(at: [indexPath], with: .automatic)
                 }
+            }
             
             print(snapshot)
         }
