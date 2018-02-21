@@ -29,7 +29,6 @@ class HomeViewController: UIViewController {
     }
     
     var ref : DatabaseReference!
-    var users : [User] = []
     var images : [Image] = []
     
     override func viewDidLoad() {
@@ -51,8 +50,8 @@ class HomeViewController: UIViewController {
 
             print(snapshot.key)
             print("testing")
-
         }
+
 
     }
 
@@ -86,9 +85,13 @@ extension HomeViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("HomeTableViewCell", owner: self, options: nil)?.first as! HomeTableViewCell
-        
+        let message = images[indexPath.row]
+        cell.captionLabel.text = message.caption
+//        let purl = user.profilePicURL
+//        renderImage(purl, cellImageView: cell.userImage)
+
 //        load image
-        let url = images[indexPath.row].imageURL
+        let url = message.imageURL
         renderImage(url, cellImageView: cell.homeImageView)
         
         return cell

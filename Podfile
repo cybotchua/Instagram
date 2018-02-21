@@ -14,6 +14,6 @@ pod "Pastel"
 pod 'FBSDKLoginKit'
 
 use_frameworks!
-pod 'Fusuma'
+pod 'YPImagePicker'
 
 end

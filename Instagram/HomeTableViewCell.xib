@@ -124,6 +124,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="xXA-VL-GrF"/>
             <connections>
+                <outlet property="UploaderLabel" destination="51Y-DA-nul" id="aTj-tI-aDw"/>
                 <outlet property="UsernameLabel" destination="Usz-aj-uMh" id="ihn-h2-uPC"/>
                 <outlet property="captionLabel" destination="98e-Zr-wrz" id="vKJ-6s-nJk"/>
                 <outlet property="commentButton" destination="BHW-Lz-1rp" id="cey-lE-D0O"/>
@@ -132,6 +133,7 @@
                 <outlet property="likeButton" destination="1Tp-X5-4xg" id="anh-df-Rud"/>
                 <outlet property="timeLabel" destination="rgV-ls-OA9" id="Hzg-9Y-IfM"/>
                 <outlet property="totalLikesLabel" destination="tDg-rC-Z6c" id="QVR-1Q-oFk"/>
+                <outlet property="uploaderImage" destination="bO5-Cr-n5G" id="ckY-QD-Rzi"/>
                 <outlet property="userImage" destination="kk7-lQ-ELs" id="ZQs-06-c15"/>
             </connections>
             <point key="canvasLocation" x="29" y="206"/>

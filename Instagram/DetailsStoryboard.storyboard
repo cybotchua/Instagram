@@ -14,7 +14,7 @@
         <!--Home-->
         <scene sceneID="7kE-dL-lkE">
             <objects>
-                <viewController id="Kt1-A2-MTN" customClass="HomeViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="Kt1-A2-MTN" customClass="HomeViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xoa-KZ-EHN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,6 +76,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh1-tG-dxN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1071" y="-1105"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="6s1-EF-azT">
+            <objects>
+                <viewController storyboardIdentifier="PostViewController" id="ake-5Q-yIb" customClass="PostViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sBG-LW-eWD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fF5-BY-kGn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fZG-y1-Il8"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="jhM-9L-DXn">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="9cM-Dg-LCI"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="TQL-4w-WLs">
+                                            <connections>
+                                                <action selector="postButtonTapped:" destination="ake-5Q-yIb" id="pgy-br-8i0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qto-jU-d01">
+                                <rect key="frame" x="10" y="54" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fGN-vD-KVb"/>
+                                    <constraint firstAttribute="width" constant="50" id="uNt-oQ-tDq"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4GU-xA-8kP">
+                                <rect key="frame" x="68" y="64" width="299" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qto-jU-d01" firstAttribute="top" secondItem="fF5-BY-kGn" secondAttribute="bottom" constant="10" id="0rA-eN-o4r"/>
+                            <constraint firstItem="Lk6-ZV-fPp" firstAttribute="trailing" secondItem="4GU-xA-8kP" secondAttribute="trailing" constant="8" id="3Mv-Cf-3MQ"/>
+                            <constraint firstItem="4GU-xA-8kP" firstAttribute="centerY" secondItem="qto-jU-d01" secondAttribute="centerY" id="72f-ub-arD"/>
+                            <constraint firstItem="fF5-BY-kGn" firstAttribute="top" secondItem="sBG-LW-eWD" secondAttribute="top" id="MO6-QU-La7"/>
+                            <constraint firstItem="fF5-BY-kGn" firstAttribute="trailing" secondItem="Lk6-ZV-fPp" secondAttribute="trailing" id="MO7-pZ-YQw"/>
+                            <constraint firstItem="qto-jU-d01" firstAttribute="leading" secondItem="Lk6-ZV-fPp" secondAttribute="leading" constant="10" id="RVd-pc-gPg"/>
+                            <constraint firstItem="4GU-xA-8kP" firstAttribute="leading" secondItem="qto-jU-d01" secondAttribute="trailing" constant="8" id="XvZ-j5-SEd"/>
+                            <constraint firstItem="fF5-BY-kGn" firstAttribute="leading" secondItem="Lk6-ZV-fPp" secondAttribute="leading" id="uhd-ad-P9n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lk6-ZV-fPp"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="captionTextField" destination="4GU-xA-8kP" id="MY6-A2-AZ3"/>
+                        <outlet property="imageView" destination="qto-jU-d01" id="X7N-Wq-U2K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F8Q-5V-uod" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1940" y="-1105.0974512743628"/>
         </scene>
         <!--Search Bar View Controller-->
         <scene sceneID="RhT-xO-GQP">

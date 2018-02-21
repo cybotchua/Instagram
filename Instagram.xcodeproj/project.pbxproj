@@ -21,6 +21,7 @@
 		00DC6BCB203A8869002FA5E0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BC3203A7A6E002FA5E0 /* Info.plist */; };
 		00DC6BCD203AAD8C002FA5E0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DC6BCC203AAD8C002FA5E0 /* SignUpViewController.swift */; };
 		00DC6BCF203AB389002FA5E0 /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DC6BCE203AB389002FA5E0 /* VCExtensions.swift */; };
+		4E692830203C7D8B00F25D8C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E69282F203C7D8B00F25D8C /* PostViewController.swift */; };
 		4EB18D0D203BB3870017846D /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB18D0B203BB3870017846D /* HomeTableViewCell.swift */; };
 		4EB18D0E203BB3870017846D /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB18D0C203BB3870017846D /* HomeTableViewCell.xib */; };
 		4EF609B1203A7C2500E528EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF609B0203A7C2500E528EC /* GoogleService-Info.plist */; };
@@ -49,6 +50,7 @@
 		00DC6BCC203AAD8C002FA5E0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		00DC6BCE203AB389002FA5E0 /* VCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		3182F9721CF80C6D341B1F59 /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E69282F203C7D8B00F25D8C /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		4EB18D0B203BB3870017846D /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		4EB18D0C203BB3870017846D /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		4EF609B0203A7C2500E528EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				4EB18D0B203BB3870017846D /* HomeTableViewCell.swift */,
 				4EB18D0C203BB3870017846D /* HomeTableViewCell.xib */,
 				4EF609B8203A8D7500E528EC /* GalleryViewController.swift */,
+				4E69282F203C7D8B00F25D8C /* PostViewController.swift */,
 				4EF609BA203A8D9200E528EC /* ProfileViewController.swift */,
 				00DC6BCC203AAD8C002FA5E0 /* SignUpViewController.swift */,
 				00DC6BBE203A7A6E002FA5E0 /* Assets.xcassets */,
@@ -256,10 +259,11 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Fusuma/Fusuma.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Pastel/Pastel.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -268,10 +272,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fusuma.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pastel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -296,6 +301,7 @@
 				002AF56E203BCE1500F8FC86 /* Image.swift in Sources */,
 				4EB18D0D203BB3870017846D /* HomeTableViewCell.swift in Sources */,
 				002AF572203C00F500F8FC86 /* User.swift in Sources */,
+				4E692830203C7D8B00F25D8C /* PostViewController.swift in Sources */,
 				4EF609B9203A8D7500E528EC /* GalleryViewController.swift in Sources */,
 				4EF609B7203A8D5A00E528EC /* SearchViewController.swift in Sources */,
 				002AF56C203BC99600F8FC86 /* PictureCollectionViewCell.swift in Sources */,

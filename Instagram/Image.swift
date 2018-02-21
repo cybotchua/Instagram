@@ -13,14 +13,17 @@ class Image {
     var comments : String = ""
     var uploaderUID : String = ""
     var imageURL : String = ""
+    var caption : String = ""
     var timeStamp : NSNumber = 0
     var currentTimeStamp = NSDate()
+    var user : User!
 
     init(imageUID: String, imageDict: [String : Any]) {
         self.imageUID = imageUID
         self.comments = imageDict["comments"] as? String ?? "No comments"
         self.uploaderUID = imageDict["uploaderUID"] as? String ?? "No uploaderUID"
         self.imageURL = imageDict["imageURL"] as? String ?? "No URL"
+        caption = imageDict["caption"] as? String ?? "No caption"
         timeStamp = imageDict["timeStamp"] as? NSNumber ?? 0
 
         let seconds = timeStamp.doubleValue
