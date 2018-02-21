@@ -13,6 +13,7 @@
 		002AF56E203BCE1500F8FC86 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AF56D203BCE1500F8FC86 /* Image.swift */; };
 		002AF570203BFB8800F8FC86 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AF56F203BFB8800F8FC86 /* SearchTableViewCell.swift */; };
 		002AF572203C00F500F8FC86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AF571203C00F500F8FC86 /* User.swift */; };
+		00639E21203D4E3200CB20D6 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00639E20203D4E3200CB20D6 /* ProfileCollectionViewCell.swift */; };
 		00DC6BB8203A7A6E002FA5E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DC6BB7203A7A6E002FA5E0 /* AppDelegate.swift */; };
 		00DC6BBD203A7A6E002FA5E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BBB203A7A6E002FA5E0 /* Main.storyboard */; };
 		00DC6BBF203A7A6E002FA5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DC6BBE203A7A6E002FA5E0 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		002AF56D203BCE1500F8FC86 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		002AF56F203BFB8800F8FC86 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		002AF571203C00F500F8FC86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00639E20203D4E3200CB20D6 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		00DC6BB4203A7A6E002FA5E0 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DC6BB7203A7A6E002FA5E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00DC6BB9203A7A6E002FA5E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				00DC6BCE203AB389002FA5E0 /* VCExtensions.swift */,
 				00DC6BBB203A7A6E002FA5E0 /* Main.storyboard */,
 				4EF609B2203A83C100E528EC /* DetailsStoryboard.storyboard */,
+				00639E20203D4E3200CB20D6 /* ProfileCollectionViewCell.swift */,
 				4EF609BA203A8D9200E528EC /* ProfileViewController.swift */,
 				002AF56F203BFB8800F8FC86 /* SearchTableViewCell.swift */,
 				002AF56B203BC99600F8FC86 /* PictureCollectionViewCell.swift */,
@@ -113,7 +116,6 @@
 				4EB18D0C203BB3870017846D /* HomeTableViewCell.xib */,
 				4EF609B8203A8D7500E528EC /* GalleryViewController.swift */,
 				4E69282F203C7D8B00F25D8C /* PostViewController.swift */,
-				4EF609BA203A8D9200E528EC /* ProfileViewController.swift */,
 				00DC6BCC203AAD8C002FA5E0 /* SignUpViewController.swift */,
 				00DC6BBE203A7A6E002FA5E0 /* Assets.xcassets */,
 				00DC6BC0203A7A6E002FA5E0 /* LaunchScreen.storyboard */,
@@ -295,6 +297,7 @@
 			files = (
 				000CEDD7203ACB3E00076471 /* LoginViewController.swift in Sources */,
 				002AF56A203BC67E00F8FC86 /* SearchBarViewController.swift in Sources */,
+				00639E21203D4E3200CB20D6 /* ProfileCollectionViewCell.swift in Sources */,
 				4EF609BB203A8D9200E528EC /* ProfileViewController.swift in Sources */,
 				00DC6BCD203AAD8C002FA5E0 /* SignUpViewController.swift in Sources */,
 				00DC6BCF203AB389002FA5E0 /* VCExtensions.swift in Sources */,

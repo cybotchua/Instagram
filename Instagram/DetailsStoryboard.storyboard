@@ -403,22 +403,31 @@
                                 </segments>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oai-rW-JlI">
-                                <rect key="frame" x="0.0" y="208.5" width="375" height="409.5"/>
+                                <rect key="frame" x="0.0" y="213.5" width="375" height="404.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WfP-Us-8YA">
-                                    <size key="itemSize" width="110" height="110"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="WfP-Us-8YA">
+                                    <size key="itemSize" width="135" height="135"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="SDD-iH-vKt">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="SDD-iH-vKt" customClass="ProfileCollectionViewCell" customModule="Instagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2s-c7-ahu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="profileImageView" destination="M2s-c7-ahu" id="iAS-b2-tYu"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -435,7 +444,7 @@
                             <constraint firstItem="Uzc-o7-3Wj" firstAttribute="top" secondItem="1Sb-Iq-xP7" secondAttribute="top" id="2su-nY-e32"/>
                             <constraint firstItem="H1P-OQ-cks" firstAttribute="leading" secondItem="jUb-iO-Cpy" secondAttribute="leading" id="3Hn-ps-ofU"/>
                             <constraint firstItem="Oai-rW-JlI" firstAttribute="leading" secondItem="jUb-iO-Cpy" secondAttribute="leading" id="4li-jF-fkN"/>
-                            <constraint firstItem="Oai-rW-JlI" firstAttribute="top" secondItem="H1P-OQ-cks" secondAttribute="bottom" id="5uG-LV-0WJ"/>
+                            <constraint firstItem="Oai-rW-JlI" firstAttribute="top" secondItem="H1P-OQ-cks" secondAttribute="bottom" constant="5" id="5uG-LV-0WJ"/>
                             <constraint firstItem="Uzc-o7-3Wj" firstAttribute="leading" secondItem="1Sb-Iq-xP7" secondAttribute="trailing" constant="20" id="GfW-54-JOe"/>
                             <constraint firstItem="H1P-OQ-cks" firstAttribute="top" secondItem="52J-o0-WU3" secondAttribute="bottom" constant="30" id="Ixs-gr-8qd"/>
                             <constraint firstItem="jUb-iO-Cpy" firstAttribute="trailing" secondItem="Uzc-o7-3Wj" secondAttribute="trailing" constant="20" id="Wsu-QR-55W"/>

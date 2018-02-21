@@ -17,6 +17,11 @@ class Image {
     var timeStamp : NSNumber = 0
     var currentTimeStamp = NSDate()
     var user : User!
+    
+    init(imageUID: String, imageURL: String) {
+        self.imageUID = imageUID
+        self.imageURL = imageURL
+    }
 
     init(imageUID: String, imageDict: [String : Any]) {
         self.imageUID = imageUID
